@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
+  get 'items/new'
+
+  get 'items/create'
+
   root 'users#show'
+
+  resources :users do
+    resources :items, only: [:create]
+  end
 
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
