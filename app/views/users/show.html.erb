@@ -1,9 +1,14 @@
+<div class="row">
+  <h2><%= @user.email %>'s Items</h2>
+  <div class="col-md-8 center box">
+    <table class="table table-hover">
 
-
-<div class="media">
-  <div class="media-body">
-    <h4 class="media-heading">
-      Email: <%= current_user.email %>
-    </h4>
+      <tbody>
+          <%= render partial: 'items/item', collection: @items %>
+        <tr>
+          <%= render partial: 'items/form', locals: { user: @user, item: @item } %>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>
